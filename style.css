@@ -44,6 +44,16 @@ p {
     background-color: #4CAF50;
     color: white;
 }
+#Alltimeline {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#Alltimeline th,
+#Alltimeline td {
+    border: 1px solid #000;
+    padding: 10px;
+}
 
 
 /* 年の列 */
