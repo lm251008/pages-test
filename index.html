@@ -1,5 +1,6 @@
 <!doctype html>
 <html class="no-js" lang="ja">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -16,25 +17,92 @@
 
     <main>
 
-       <img src="34799402_s.jpg" alt="パンダ画像">
-         <h1>パンダと国際社会</h1>
+        <img src="34799402_s.jpg" alt="パンダ画像">
+
+        <h1>パンダと国際社会</h1>
 
         <p>
             白と黒のかわいらしい見た目で世界中から愛されているパンダ。来日の際には、いつも話題にあがります。ですが実は、日本をはじめとする限られた国でしか飼育されていません。その背景には、中国との国際的な協力があります。
 
-日本ではこれまでに多くのパンダが動物園で暮らしてきましたが、その数や歴史はあまり知られていません。また、世界に目を向けると、G7各国で飼育されているパンダの数にも大きな違いがあります。
+            日本ではこれまでに多くのパンダが動物園で暮らしてきましたが、その数や歴史はあまり知られていません。また、世界に目を向けると、G7各国で飼育されているパンダの数にも大きな違いがあります。
 
-この記事では、日本で飼育されたパンダたちを一覧で紹介するとともに、G7各国のパンダ飼育数をグラフで比較します。パンダを通して、動物園の役割や国際交流についても考えてみましょう。
-
+            この記事では、日本で飼育されたパンダたちを一覧で紹介するとともに、G7各国のパンダ飼育数をグラフで比較します。パンダを通して、動物園の役割や国際交流についても考えてみましょう。
         </p>
 
         <h2>日本</h2>
 
         <p>
-            パンダは中国から貸し出される特別な動物で、日本でもこれまでに多くのパンダが飼育されてきました。名前や生まれた場所、来日した時期など、それぞれに異なるストーリーがあります。このページでは、日本で飼育されたパンダたちをカード形式でわかりやすく紹介します。お気に入りのパンダや、知っている名前があるか探してみましょう。
+            パンダは、中国から貸し出される特別な動物です。これまで日本では、多くのパンダがさまざまな動物園で飼育されてきました。名前や生まれた場所、来日した時期など、それぞれに異なる経歴があります。このページでは、日本で飼育されたパンダたちをカード形式でわかりやすく紹介しています。お気に入りのパンダや、知っている名前のパンダを探してみてください。
         </p>
 
-        <!-- 後でここにパンダカードを表示 -->
+        <div id="filterArea">
+
+            <input type="text" id="nameFilter" placeholder="名前で検索">
+
+            <select id="sexFilter">
+                <option value="">すべての性別</option>
+                <option value="オス">オス</option>
+                <option value="メス">メス</option>
+            </select>
+
+            <select id="birthFilter">
+                <option value="">すべての出生日</option>
+                <option value="1950-1959">1950-1959</option>
+                <option value="1960-1969">1960-1969</option>
+                <option value="1970-1979">1970-1979</option>
+                <option value="1980-1989">1980-1989</option>
+                <option value="1990-1999">1990-1999</option>
+                <option value="2000-2009">2000-2009</option>
+                <option value="2010-2019">2010-2019</option>
+                <option value="2020-現在">2020-現在</option>
+                <option value="不明">不明</option>
+            </select>
+
+            <select id="statusFilter">
+                <option value="">すべての死亡日／現在地</option>
+                <option value="1970-1979">1970-1979</option>
+                <option value="1980-1989">1980-1989</option>
+                <option value="1990-1999">1990-1999</option>
+                <option value="2000-2009">2000-2009</option>
+                <option value="2010-2019">2010-2019</option>
+                <option value="2020-現在">2020-現在</option>
+                <option value="生存中">生存中</option>
+                <option value="不明">不明</option>
+            </select>
+
+            <select id="arrivalFilter">
+                <option value="">すべての来日日</option>
+                <option value="1970-1979">1970-1979</option>
+                <option value="1980-1989">1980-1989</option>
+                <option value="1990-1999">1990-1999</option>
+                <option value="2000-2009">2000-2009</option>
+                <option value="2010-2019">2010-2019</option>
+                <option value="2020-現在">2020-現在</option>
+                <option value="日本で生誕">日本で生誕</option> 
+            </select>
+
+            <select id="departureFilter">
+                <option value="">すべての日本出国日</option>
+                <option value="1970-1979">1970-1979</option>
+                <option value="1980-1989">1980-1989</option>
+                <option value="1990-1999">1990-1999</option>
+                <option value="2000-2009">2000-2009</option>
+                <option value="2010-2019">2010-2019</option>
+                <option value="2020-現在">2020-現在</option>
+                <option value="日本で死亡">日本で死亡</option> 
+            </select>
+
+            <select id="zooFilter">
+                <option value="">すべての動物園</option>
+                <option value="恩賜上野動物園">恩賜上野動物園</option>
+                <option value="神戸市立王子動物園">神戸市立王子動物園</option>
+                <option value="アドベンチャーワールド">アドベンチャーワールド</option>
+                <option value="短期イベント">短期イベント</option>
+            </select>
+
+        </div>
+
+        <!-- パンダカード表示 -->
         <div id="pandaCards"></div>
 
         <h2>世界</h2>
@@ -43,18 +111,126 @@
             パンダは世界中の動物園で見られるわけではなく、中国との協力によって限られた国だけで飼育されています。では、日本を含むG7の国々では、これまでにどれくらいのパンダが飼育されてきたのでしょうか。このページでは、G7各国のパンダ飼育数をグラフで比較しながら、国ごとの特徴や違いを見ていきます。
         </p>
 
-        <!-- G7グラフ表示場所 -->
+        <!-- G7グラフ -->
         <div id="g7Chart"></div>
 
         <h2>パンダと日中関係</h2>
 
         <p>
-            本文
+           パンダは、中国と受け入れ国との友好関係を象徴する存在として知られています。2026年7月時点では、日本で飼育されているジャイアントパンダはいません。ここでは、パンダの来日や返還と、日中関係における主な出来事を年表で紹介します。
         </p>
 
+        
+            <section id="timeline">
+                <h3>年表</h3>
+
+                <table id="Alltimeline">
+                    <thead>
+                        <tr>
+                            <th>年</th>
+                            <th>日中関係・国際情勢</th>
+                            <th>パンダ関連</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>1972年</td>
+                            <td>日本と中国が国交正常化（日中共同声明）</td>
+                            <td>カンカン・ランラン初来日（贈与。以後は貸与方式へ）</td>
+                        </tr>
+
+                        <tr>
+                            <td>1978年</td>
+                            <td>日中平和友好条約締結</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td>1980年</td>
+                            <td></td>
+                            <td>ホァンホァン来日、シャンシャン・パオリン来日</td>
+                        </tr>
+
+                        <tr>
+                            <td>1982年</td>
+                            <td></td>
+                            <td>フェイフェイ来日</td>
+                        </tr>
+
+                        <tr>
+                            <td>1989年</td>
+                            <td>天安門事件</td>
+                            <td>トントン・ビンビン来日（こうふ博）</td>
+                        </tr>
+
+                        <tr>
+                            <td>1992年</td>
+                            <td>天皇皇后両陛下（現・上皇ご夫妻）が中国訪問</td>
+                            <td>エイメイ・ヨウヒン来日</td>
+                        </tr>
+
+                        <tr>
+                            <td>1998年</td>
+                            <td>日中共同宣言</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td>2000年</td>
+                            <td></td>
+                            <td>ラウヒン誕生（日本初の自然繁殖成功）</td>
+                        </tr>
+
+                        <tr>
+                            <td>2005年</td>
+                            <td>中国で大規模な反日デモ</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td>2011年</td>
+                            <td>東日本大震災</td>
+                            <td>リーリー・シンシン来日</td>
+                        </tr>
+
+                        <tr>
+                            <td>2012年</td>
+                            <td>日本が尖閣諸島を国有化</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td>2020年</td>
+                            <td>新型コロナウイルス流行（人的往来が大幅制限）</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td>2023年</td>
+                            <td>ALPS処理水の海洋放出開始</td>
+                            <td>国内飼育数が過去最多の13頭を記録。その後、返還が相次ぐ</td>
+                        </tr>
+
+                        <tr>
+                            <td>2025年</td>
+                            <td></td>
+                            <td>アドベンチャーワールドの全4頭を返還</td>
+                        </tr>
+
+                        <tr>
+                            <td>2026年</td>
+                            <td>高市首相が「台湾有事」をめぐる発言</td>
+                            <td>シャオシャオ・レイレイ返還、国内飼育数0頭</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
     </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
     <script src="script.js"></script>
 
 </body>
+
 </html>
